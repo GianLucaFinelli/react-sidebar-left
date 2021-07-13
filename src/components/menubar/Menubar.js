@@ -3,7 +3,7 @@ import LinkItem from '../menubar/LinkItem';
 import Search from '../menubar/Search';
 
 export default function Menubar(props){
-    const { icons, toggleMenu } = props;
+    const { icons, iconMenu, toggleMenu } = props;
 
     return(
         <div className="sidebar">
@@ -12,7 +12,7 @@ export default function Menubar(props){
                     <i className='bx bxl-dev-to'></i>
                     <div className="logo_name">devLeague</div>
                 </div>
-                <i className='bx bx-menu' id="btnMenu" onClick={toggleMenu}></i>
+                <i className={`bx ${iconMenu}`} id="btnMenu" onClick={toggleMenu}></i>
             </div>
             <ul>
                 <Search></Search>

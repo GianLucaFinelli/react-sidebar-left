@@ -29,10 +29,11 @@ function App() {
   const toggleMenu = () => {
     setMainClass(!mainClass);
   }
+  let iconMenu = mainClass ? 'bx-menu' : 'bx-menu-alt-right';
 
   return (
     <div className={mainClass ? 'main close' : 'main'}>
-      <Menubar icons={icons} toggleMenu={toggleMenu}></Menubar>
+      <Menubar icons={icons} iconMenu={iconMenu} toggleMenu={toggleMenu}></Menubar>
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

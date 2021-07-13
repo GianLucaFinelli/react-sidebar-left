@@ -45,16 +45,19 @@ code {
   margin: 0px !important;
 }
 
-.sidebar .bx-menu{
+.sidebar .bx-menu, .sidebar .bx-menu-alt-right{
   cursor: pointer;
   font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.227);
   z-index: 10;
   position: absolute;
   left: 80%;
   transition: 0.5s all ease;
 }
   
-.main.close .sidebar .bx-menu{
+.main.close .sidebar .bx-menu,.main.close .sidebar .bx-menu-alt-right{
   left: auto;
 }
 
@@ -66,8 +69,10 @@ code {
 .logo_content{
   padding: 20px 15px;
   margin-bottom: 20px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   position: relative;
   transition: 0.5s all ease;
   overflow: hidden;
