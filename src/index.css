@@ -20,21 +20,63 @@ code {
     monospace;
 }
 
+/* --- FLEXBOX INICIO--- */
+
+.d-flex{
+  display: flex;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.jc-center{
+  justify-content: center;
+}
+.jc-around{
+  justify-content: space-around;
+}
+
+.jc-between{
+  justify-content: space-between;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.ai-center{
+  align-items: center;
+}
+
+
+/* --- FLEXBOX FIN --- */
+
 .main{
+  position: relative;
   display: grid;
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 200px calc(100% - 200px);
   transition: 0.5s all ease-in-out;
 }
 
 .main.close{
-  grid-template-columns: 5% 95%;
+  grid-template-columns: 60px calc(100% - 60px);
   transition: 0.5s all ease-in-out;
 }
+
+/* --- SIDEBAR INICIO --- */
 
 .sidebar{
   width: auto;
   background-color: rgb(12, 12, 12);
   color: #fff;
+  height: 100%;
+  min-height: 100vh;
+  position: sticky;
   transition: 0.5s all ease;
 }
 
@@ -50,7 +92,8 @@ code {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.227);
+  color: blueviolet;
+  border: 1px solid blueviolet;
   z-index: 10;
   position: absolute;
   left: 80%;
@@ -81,7 +124,7 @@ code {
 .main.close .logo{
   left: 25%;
   opacity: 0;
-  transition: 0.5s all ease;
+  transition: 0.3s all ease;
 }
 
 .logo{
@@ -90,23 +133,16 @@ code {
   display: flex;
   align-items: center;
   opacity: 1;
-  transition: 0.5s all ease;
+  transition: 0.3s all ease;
 }
 
 .logo_name{
+  padding: 10px;
   margin: auto;
 }
 
-.logo_name:hover{
-  border-radius: 30px;
-  background: #0c0c02;
-  box-shadow: inset 13px 13px 49px #080801,
-              inset -13px -13px 49px #101003;
-  transition: 0.5s all ease-in-out;
-}
-
 .main.close .sidebar__search{
-  width: 50%;
+  width: auto !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,7 +155,7 @@ code {
   align-items: center;
   margin: 10px auto;
   background: rgb(65, 65, 65);
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   position: relative;
 }
@@ -164,9 +200,9 @@ code {
   opacity: 1;
 }
 
-/* --- LinkItem --- */
+/* --- sidebar-link --- */
 
-.linkitem{
+.sidebar-link{
   width: 80%;
   display: flex;
   flex-direction: row;
@@ -177,15 +213,15 @@ code {
   /* overflow: hidden; */
 }
 
-.main.close .sidebar .linkitem{
+.main.close .sidebar .sidebar-link{
   width: auto;
 }
 
-.linkitem i{
+.sidebar-link i{
   padding: 10px;
 }
 
-.linkitem a{
+.sidebar-link a{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -197,26 +233,33 @@ code {
   overflow: hidden;
 }
 
-.sidebar .linkitem .linkitem__name{
+.sidebar-link_icon{
+  border-radius: 5px;
+  background: #6a3093;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #a044ff, #6a3093);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sidebar .sidebar-link .sidebar-link__name{
   margin-left: 10px;
   visibility: visible;
   opacity: 1;
   transition: 0.5s all ease;
 }
 
-.main.close .sidebar .linkitem .linkitem__name{
+.main.close .sidebar .sidebar-link .sidebar-link__name{
   display: none;
   visibility: hidden;
   opacity: 0;
   transition: 0.5s all ease;
 }
 
-.linkitem a:hover{
+.sidebar-link a:hover{
   background-color: rgb(22, 22, 22);
   transition: 0.3s all ease;
 }
 
-.linkitem a .linkitem__tooltip{
+.sidebar-link a .sidebar-link__tooltip{
   color: black;
   position: absolute;
   left: 135%;
@@ -234,10 +277,12 @@ code {
   opacity: 0;
 }
 
-.main.close .linkitem a:hover .linkitem__tooltip{
+.main.close .sidebar-link a:hover .sidebar-link__tooltip{
   visibility: visible;
   opacity: 1;
   /* display: block; */
   top: 50%;
   transition: all 0.5s ease;
 }
+
+/* --- SIDEBAR FIN --- */

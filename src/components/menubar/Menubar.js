@@ -1,5 +1,5 @@
 import React from 'react';
-import LinkItem from '../menubar/LinkItem';
+import SidebarLink from '../menubar/SidebarLink';
 import Search from '../menubar/Search';
 
 export default function Menubar(props){
@@ -16,7 +16,7 @@ export default function Menubar(props){
             </div>
             <ul>
                 <Search></Search>
-                { icons.map((icon,index) => <LinkItem icon={icon} key={`${icon.page}-${index}`} ></LinkItem>) }
+                { icons.map((icon,index) => <SidebarLink icon={icon} key={`${icon.page}-${index}`} ></SidebarLink>) }
             </ul>
         </div>
     );
