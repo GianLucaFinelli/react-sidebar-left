@@ -15,7 +15,7 @@ Instala react-sidebar-left con npm
   npm start
 ```
 
-[Imgur](https://i.imgur.com/0RRMX5R.png)
+![Imgur](https://i.imgur.com/0RRMX5R.png)
 
-[Imgur](https://i.imgur.com/fXja9NN.png)
+![Imgur](https://i.imgur.com/fXja9NN.png)
 
